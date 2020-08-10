@@ -28,7 +28,7 @@ export function artistListSearch(keywords){
     }
 }
 
-export default artistDetail(id) {
+export function artistDetail(id) {
     const request = axios.get(`${URL}/artists?id=${id}`)
                     .then( response => response.data )
     
