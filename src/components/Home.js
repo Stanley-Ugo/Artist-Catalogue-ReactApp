@@ -1,4 +1,5 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
 class Home extends Component {
 
@@ -11,4 +12,10 @@ class Home extends Component {
     }
 }
 
-export default Home;
+function mapStateToProps(state){
+    return (
+        artists: state.artists
+    )
+}
+
+export default connect()(Home);    
