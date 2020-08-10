@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { artistListAll } from '../store/actions';
+import { artistListAll, artistListSearch } from '../store/actions';
 import { Link } from 'react-router-dom';
 
 class Home extends Component {
@@ -24,13 +24,19 @@ class Home extends Component {
         : null
     )
 
+    getKeywords = (event) => {
+        let key = event.target.value;
+
+        this.props.dispatch(artistListSearch(key))
+    }
+
     render() {
         console.log(this.props)
         return(
             <>
                 <div className="search_container">
                     <h2>Search Your Artist</h2>
-                    <input type="text" />
+                    <input type="text" onChange={ event => this.getKeywords(event) } />
                 </div>
 
                 <div className="artist_container">
