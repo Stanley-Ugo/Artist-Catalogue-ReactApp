@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { artistDetail } from '../store/actions';
+import { artistDetail, clearArtistDetail } from '../store/actions';
 import { Link } from 'react-router-dom';
 
 
@@ -8,6 +8,10 @@ class Artist extends Component {
 
     componentDidMount(){
         this.props.dispatch(artistDetail(this.props.match.params.id));
+    }
+
+    componentWillUnmount(){
+        this.props.dispatch(clearArtistDetail());
     }
 
     artistTemplate = (data) => (

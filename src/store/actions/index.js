@@ -1,7 +1,8 @@
 import {
     GET_ARTISTS_ALL,
     GET_ARTISTS_SEARCH,
-    GET_ARTIST_DETAIL
+    GET_ARTIST_DETAIL,
+    CLEAR_ARTIST_DETAIL
 } from '../types';
 
 import axios from 'axios';
@@ -35,5 +36,12 @@ export function artistDetail(id) {
     return {
         type: GET_ARTIST_DETAIL,
         payload: request
+    }
+}
+
+export function clearArtistDetail(){
+    return {
+        type: CLEAR_ARTIST_DETAIL,
+        payload: null
     }
 }
