@@ -1,5 +1,5 @@
 import {
-    GET_ARTIST_ALL
+    GET_ARTISTS_ALL
 } from '../types';
 
 import axios from 'axios';
@@ -11,7 +11,7 @@ export function artistListAll(){
                     .then( response => response.data );
 
     return {
-        type: GET_ARTIST_ALL,
+        type: GET_ARTISTS_ALL,
         payload: request
     }
 }
