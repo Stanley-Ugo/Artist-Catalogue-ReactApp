@@ -7,7 +7,7 @@ const URL = 'http://localhost:3004';
 
 export function artistListAll(){
 
-    const request = axios.get(`${URL}/artists`)
+    const request = axios.get(`${URL}/artists?_limit=6`)
                     .then( response => response.data );
 
     return {
