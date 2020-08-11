@@ -37,8 +37,8 @@ class Artist extends Component {
                 </div>
             </div>
             <div className="artist_album_list">
-                {data.artistData[0].album ?
-                  data.artistData[0].album.map(item=>(
+                {data.artistData[0].albums ?
+                  data.artistData[0].albums.map(item=>(
                       <div key={item.cover} className="albums">
                           <div
                             className="cover"
